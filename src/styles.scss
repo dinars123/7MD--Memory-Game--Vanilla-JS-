@@ -1,3 +1,107 @@
-body {
-  background-color: antiquewhite;
+body{
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #3f0101;
+}
+
+.container{
+position: relative;
+display: flex;
+align-items: center;
+flex-direction: column;
+justify-content: center;
+gap: 20px;
+background-color: #520202;
+padding: 30px 60px;
+border-radius: 30px;
+}
+
+.h1{
+font-size: 60px;
+font-weight: 600;
+color: #fff;
+}
+
+.game{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 700px;
+  height: 700px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  justify-content: center;
+}
+
+.item{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 300px;
+  font-size: 80px;
+  background: #fff;
+  transition: 0.5s;
+  transform: rotateY(0deg);
+  border-radius: 30px;
+  &:hover{
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.item.boxOpen{
+  transform: rotateY(180deg)
+}
+
+.item::after{
+  content:'';
+  position: absolute;
+  inset: 0;
+  background-image: url(assets/images/cardBack.jpg);
+  background-position: center;
+  background-size: contain;
+  transition: 0.5s;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  border-radius: 25px;
+}
+
+.boxMatch{
+  transform: rotateY(180deg);
+}
+
+.boxOpen:after{
+  transform: rotateY(0deg);
+}
+
+.buttonswrap{
+  width: 100%;
+  display: flex;
+  justify-content:space-between ;
+  align-items: center;
+}
+
+.start,
+.reset{
+padding: 15px 20px;
+padding: 15px 20px;
+cursor: pointer;
+border: 1px solid rgb(202, 198, 198);
+border-radius:  15px;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+background-color: #3f0101;
+font-weight: 600;
+color: #fff;
+}
+
+.time{
+  color: #fff;
 }
